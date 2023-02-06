@@ -18,13 +18,73 @@ Note: The standard interpretation of the logical symbols - "∨", "∧", "→", 
   (c) (A→(B∨C))∨(C→¬A) 
   (d) ((A→B)∧C)∨(A∧D) 
   ```
-	
+  
+  **Answers:**
+  
+  (a) is a tautology 
+  | A       | B       | C       | (¬A→B)    | ∨   | ((A∧¬C) → B) |
+  |---------|---------|---------|-----------|-----|--------------| 
+  | T       | T       | T       | T         | **T**   | T            |   
+  | T       | T       | F       | T         | **T**   | T            |
+  | T       | F       | T       | T         | **T**   | T            |
+  | T       | F       | F       | T         | **T**   | T            |
+  | F       | T       | T       | T         | **T**   | T            |
+  | F       | T       | F       | T         | **T**   | T            |
+  | F       | F       | T       | F         | **T**   | T            |
+  | F       | F       | F       | F         | **T**   | T            |
+  
+  (b) is contingent 
+  | A      | B      | (A→B)  |  ∧  | (A→¬B)  |
+  |--------|--------|--------|-----|---------|
+  | T      | T      | T      | **F**   | F       |
+  | T      | F      | F      | **F**   | T       |  
+  | F      | T      | T      | **T**   | T       |
+  | F      | F      | T      | **T**   | T       |
+  
+  (c) is a tautology 
+  | A       | B       | C       | (A→(B∨C))  | ∨   | (C→¬A)    |
+  |---------|---------|---------|------------|-----|-----------| 
+  | T       | T       | T       | T          | **T**   | F         |   
+  | T       | T       | F       | T          | **T**   | T         |
+  | T       | F       | T       | T          | **T**   | F         |
+  | T       | F       | F       | F          | **T**   | T         |
+  | F       | T       | T       | T          | **T**   | T         |
+  | F       | T       | F       | T          | **T**   | T         |
+  | F       | F       | T       | T          | **T**   | T         |
+  | F       | F       | F       | T          | **T**   | T         |
+  
+  (d) is contingent  
+  | A   | B   | C   | D   | (A→B)∧C)  | ∨   | (A∧D)  |
+  |-----|-----|-----|-----|-----------|-----|--------|	
+  | T   | T   | T   | T   | T         | **T**   | T      |
+  | T   | T   | T   | F   | T         | **T**   | F      |
+  | T   | T   | F   | T   | F         | **T**   | T      |
+  | T   | T   | F   | F   | F         | **F**   | F      |
+  | T   | F   | T   | T   | F         | **T**   | T      |
+  | T   | F   | T   | F   | F         | **F**   | F      |
+  | T   | F   | F   | T   | F         | **T**   | T      |  
+  | T   | F   | F   | F   | F         | **F**   | F      |
+  | F   | T   | T   | T   | T         | **T**   | F      |
+  | F   | T   | T   | F   | T         | **T**   | F      |
+  | F   | T   | F   | T   | F         | **F**   | F      |   
+  | F   | T   | F   | F   | F         | **F**   | F      |
+  | F   | F   | T   | T   | T         | **T**   | F      |
+  | F   | F   | T   | F   | T         | **T**   | F      |
+  | F   | F   | F   | T   | F         | **F**   | F      |   
+  | F   | F   | F   | F   | F         | **F**   | F      |
+  
 2. A _literal_ is an atomic formula or the negation of an atomic formula. We say a formula is in _conjunctive normal form_ (CNF) if it is the conjunction of the disjunction of literals. Find propositional logic formulas in CNF equivalent to each of the following:
   ```
   (a) (A→B)→C
   (b) (A→(B∨C))∨(C→¬A)
   (c) (¬A∧¬B∧C)∨(¬A∧¬C)∨(B∧C)∨A 
   ```
+  
+  **Answers:** 
+  (I need help with this) 
+  (a) (¬AVC) ∧ (BVC) 
+  (b) T
+  (c) ? 
   
 3. Let V be the vocabulary of first-order logic consisting of a binary relation P and a unary relation F. Interpret P(x,y) as “x is a parent of y” and F(x) as “x is female.” Where possible define the following formulas in this vocabulary; where not possible, explain why: 
   
@@ -35,6 +95,10 @@ Note: The standard interpretation of the logical symbols - "∨", "∧", "→", 
   (d)  O(x) that says that x is an only child  
   (e)  T(x) that says that x has exactly two brothers 
   ```
+  
+  **Answers:** 
+  (a) not possible to define within V vocabulary, since F(x) means x is a female, and (generally) females aren't considered brothers? -- though this is also an antiquated and rigid view of gender that I don't personally subscribe to 
+  (b) 
 
 4. Let V be a vocabulary of the attribute (concept) language with complements (ALC) consisting of a role name "parent_of" and a concept name "Male". Interpret parent_of as "x is a parent of y" and M as "x is male". Where possible define the following formulas in this vocabulary; where not possible, explain why: 
   ```
@@ -53,7 +117,13 @@ Note: The standard interpretation of the logical symbols - "∨", "∧", "→", 
   (a) ∃x∀y and ∀x∃y
   (b) ∃x∀y∃z and ∀x∃y∀z 
   (c) ∀x∃y∀z∃w and ∃x∀y∃z∀w
-```
+  ```
+  **Answers:**
+ * UNFINISHED! 
+ * (a) there exists some x for any y VS for any x there exists some y 
+ * (b) there exists some x for any y there exists z VS for any x there exists some y for any z 
+ * (c) for any x there exists some y for any z there exists some w VS there exists x for any y there exists z for any w 
+ 
 	
 7. Show that the following sentences are not equivalent by exhibiting a graph that models one but not both of these sentences:
 ```
